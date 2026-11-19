@@ -1,0 +1,14 @@
+#!/bin/bash
+# Adapted from devops2: same steps, but uses this repo's path and skips
+# uv/pre-commit until the repo root has a pyproject.toml / pre-commit config.
+if [ ! -f .git/hooks/commit-msg ] && [ "$DEVPOD" = "true" ]; then
+	git config --global push.autoSetupRemote true
+	git config --global --add safe.directory /workspaces/devops-study-app
+	if [ -f pyproject.toml ]; then
+		uv sync
+	fi
+	if [ -f .pre-commit-config.yaml ]; then
+		uv run pre-commit install
+		uv run pre-commit install --hook-type commit-msg
+	fi
+fi

@@ -1,11 +1,14 @@
 {
-  "name": "devops-study-app",
   "build": {
     "context": "..",
     "dockerfile": "Dockerfile"
   },
+  "postCreateCommand": "mise trust && mise install && mise exec -- bash scripts/setup_project",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "postCreateCommand": "mise trust && mise install"
+  "forwardPorts": [
+    22111,
+    22112
+  ]
 }
