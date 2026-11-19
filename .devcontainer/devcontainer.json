@@ -1,0 +1,11 @@
+{
+  "name": "devops-study-app",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "mise trust && mise install"
+}
