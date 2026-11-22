@@ -30,7 +30,7 @@ COPY --from=builder --chown=app:app /app/.venv /app/.venv
 USER app
 
 # Expose the correct port
-EXPOSE 22112
+EXPOSE 22111
 
 # Run the application
 CMD ["/app/.venv/bin/study-tracker-frontend"]
