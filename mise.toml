@@ -4,3 +4,6 @@ python = "3.15"
 ruff = "latest"
 trivy = "latest"
 uv = "latest"
+
+[env]
+_.python.venv = { path = ".venv" }
