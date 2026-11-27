@@ -1,5 +1,6 @@
 [tools]
 dive = "latest"
 python = "3.15"
+ruff = "latest"
 trivy = "latest"
 uv = "latest"
